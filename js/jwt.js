@@ -18,8 +18,11 @@ function base64url(source) {
 
 function create_JWT( header, payload, secret ){
 
+    header = JSON.parse(header);
+    payload = JSON.parse(payload);
+
     if (header.typ != "JWT" || !allowed_codes.includes( header.alg.toLowerCase() ) ){
-        return 0;
+        return 1;
     }
 
     coded_header = base64url( CryptoJS.enc.Utf8.parse( JSON.stringify( header ) ) ) ; 
@@ -79,6 +82,6 @@ function decode_JWT( jwt, secret ) {
 head =  {"alg": "HS256", "typ": "JWT"};
 payload = {"taza": "cafe", "mate":"yerba"};
 secret = "thisiswrong"
-decode_JWT(create_JWT( head, payload, secret ), secret);
+//console.log( decode_JWT(create_JWT( head, payload, secret ), secret) );
 
 
