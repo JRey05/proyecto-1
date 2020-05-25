@@ -2,6 +2,7 @@ storage = window.localStorage;
 //storage.clear();
 
 $(document).ready(function(){
+    updateHistorial();
     $('#header-text, #payload-text, #signature-text').on('keyup',function() {
         jwt = create_JWT($.trim($('#header-text').val()), $.trim($('#payload-text').val()), $.trim($('#signature-text').val())) 
         if( jwt != 1 ) {
@@ -13,13 +14,12 @@ $(document).ready(function(){
     $('#clear').click(function() {
         if( confirm('¿Quiere eliminar los JWT almacenados?') ){
             storage.removeItem( 'arr' );
-            $("#historial").children().hide();
+            $("#historial").hide();
+            $("#clear").hide();
         }
     });
     $('#save').click(function() {
-        jwt = $('#JWT-text').val();
-        store( jwt );
-        updateHistorial();
+        guardar();
     });
     $('#help-p').click(function() {
         $('#help-text').toggle();
@@ -32,15 +32,42 @@ $(document).ready(function(){
             completar($(this).attr('id')[3],$(this).val());
         }
     });
+    $(".dropdown-item").click(function() {
+        completeHeader($(this).text());
+    })
+    $("#day").click(function(){
+      alert("Todavia no funciono ale. LEAVE ME ALONEEEEEEE");
+    });
+    $("#night").click(function(){
+       alert("Todavia no funciono ale. LEAVE ME ALONEEEEEEE");
+    });
 
 });
 
+function guardar() {
+    jwt = $('#JWT-text').val();
+    if ( jwt === create_JWT($.trim($('#header-text').val()), $.trim($('#payload-text').val()), $.trim($('#signature-text').val()))) {
+        id = $('#JWT-id').val();
+        alg = JSON.parse($.trim($('#header-text').val())).alg;
+        store( jwt , id , alg );
+        updateHistorial();
+    } else {
+        //FIXME Mensaje error
+    }
+}
+
+function completeHeader(alg) {
+    $("#header-text").val('{\n\t"alg": "' + alg + '",\n\t "typ": "JWT"\n}');
+}
+
+//FIXME
 function completar(position, secret ) {
     arr = getObj('arr');
     if( arr == undefined ) {
 
     } else {
-        jwt = decode_JWT( arr[position] , secret );
+        jwt = decode_JWT( arr[position][0] , secret );
+        console.log(secret);
         if ( jwt[0] == 0 ) {
         // El jwt era valido.
             $("#header-text").val(JSON.stringify(jwt[1]));
@@ -53,12 +80,16 @@ function completar(position, secret ) {
 
 function updateHistorial() {
     if ( ( arr = getObj( 'arr' ) ) == undefined ) {
+        $("#historial").hide();
+        $("#clear").hide();
         return;
-    }
+    } 
+    $("#historial").show();
+    $("#clear").show();
     div = $("#historial").children().first();
     for( i=0 ; i < 5 ; i++) {
         if ( arr[i] != undefined ) {
-            div.children().first().text( "JWT" + i+1 );
+            div.children().first().text( arr[i][1] );
             div.show();
             div.children("div").hide()
         } else {
@@ -68,7 +99,8 @@ function updateHistorial() {
     }
 }
 
-function store( nuevo ) {
+function store( jwt , id , alg ) {
+    nuevo = [ jwt , id , alg ]
     if( getObj( 'arr' ) == undefined ){
         arr = [ nuevo ];
         setObj( 'arr' , arr );
@@ -109,4 +141,3 @@ function getObj( key ) {
     }
 }
 
-updateHistorial();

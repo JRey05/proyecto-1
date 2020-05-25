@@ -3,4 +3,9 @@ body{
 }
 textarea{
   background-color:#BBB;
+  height: 10em;
+  padding: 1em;
+}
+textarea#JWT-text{
+  height: 30em;
 }

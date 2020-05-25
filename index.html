@@ -19,63 +19,60 @@
       <div class="mx-auto">JSON Web Token generator!</div>
       <div class="btn-group mr-2" role="group" aria-label="Second group">
 <!-- FIXME Agregar imagenes de sol y luna -->
-        <button type="button" class="btn btn-secondary">Day</button>
-        <button type="button" class="btn btn-secondary">Night</button>
+        <button id="day" type="button" class="btn btn-secondary">Day</button>
+        <button id="night" type="button" class="btn btn-secondary">Night</button>
       </div>
     </nav>
 
-    <div class="container-fluid mt-5">
-      <div class="row">
-        <div>
-          <p id="help-p"> Help! </p>
-        </div>
-        <div class="jumbotron mx-auto" id="help-text"> Ayuda para crear un jwtasdfaisdvaisdvpaiushdvapiushdviasdvdvasdvasdvasdvasdvasdvasdvasdvasvdasdvasvasdfvafvadfvafvafvavavdfvsdfvsdfvsdf </div>
-      </div>
-      <div class="dropdown">
-        <button class="btn mx-auto btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown button
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item">Action</a>
-          <a class="dropdown-item">Another action</a>
-          <a class="dropdown-item">Something else here</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-2">
-          <div class="mx-auto mt-2">
-            <button id="clear" class="btn btn-secondary">Limpiar</button>
+    <div class="container-fluid mt-5" style="margin-bottom:100px">
+      <div class="row justify-content-center">
+          <div>
+          <button class="btn btn-secondary mb-3" id="help-p"> Como crear un JWT </button>
           </div>
-          <div id="historial">
-            <div class="row bg-secondary">
+      </div>
+      <div class="jumbotron ml-5 mr-5 mt-3 " id="help-text"> Ayuda para crear un jwtasdfaisdvaisdvpaiushdvapiushdviasdvdvasdvasdvasdvasdvasdvasdvasdvasvdasdvasvasdfvafvadfvafvafvavavdfvsdfvsdfvsdf </div>
+      <div class="row justify-content-center">
+          <div class="dropdown">
+            <button class="btn mx-auto btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Algoritmo
+            </button>
+            <div class="dropdown-menu" aria-labelledby="Algoritmo">
+              <a class="dropdown-item">HS256</a>
+            </div>
+          </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-3">
+          <div id="historial" class="col-8 mt-3">
+            <div class="row bg-secondary rounded">
               <p class="jwts mx-auto"></p>
               <div>
                 <label >Ingrese la clave:</label>
                 <input id="key0" class="mx-auto clave" type="text" ></input>
               </div>
             </div>
-            <div class="row bg-secondary">
+            <div class="row bg-secondary rounded mt-2">
               <p class="jwts mx-auto"></p>
               <div>
                 <label >Ingrese la clave:</label>
                 <input id="key1" class="mx-auto clave" type="text" ></input>
               </div>
             </div>
-            <div class="row bg-secondary">
+            <div class="row bg-secondary rounded mt-2">
               <p class="jwts mx-auto"></p>
               <div>
                 <label >Ingrese la clave:</label>
                 <input id="key2" class="mx-auto clave" type="text" ></input>
               </div>
             </div>
-            <div class="row bg-secondary">
+            <div class="row bg-secondary rounded mt-2">
               <p class="jwts mx-auto"></p>
               <div>
                 <label >Ingrese la clave:</label>
                 <input id="key3" class="mx-auto clave" type="text" ></input>
               </div>
             </div>
-            <div class="row bg-secondary">
+            <div class="row bg-secondary rounded mt-2">
               <p class="jwts mx-auto"></p>
               <div>
                 <label >Ingrese la clave:</label>
@@ -83,8 +80,11 @@
               </div>
             </div>
           </div>
+          <div class="row col-8 mt-2 justify-content-center">
+            <button id="clear" class="btn btn-secondary">Limpiar</button>
+          </div>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <p>Header</p>
           <textarea id="header-text" style="color:blue; width:100%"></textarea>
           <p>Payload</p>
@@ -92,28 +92,28 @@
           <p>Signature</p>
           <textarea id="signature-text" style="color:green; width:100%"></textarea>
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <div class="row">
             <p>JWT</p>
           </div>
           <div style="height:100%;">
             <textarea id="JWT-text" style="color:green; width:100%"></textarea>
+            <div class="input-group mt-3">
+                <input id="JWT-id" type="text" class="form-control" placeholder="Identificador" aria-label="Text input with segmented dropdown button">
+                <button id="save" type="button" class="btn btn-secondary ">Guardar</button>
+            </div>
           </div>
         </div>
       </div>
-          <div class="row">
-            <div class="mx-auto mt-2">
-              <button id="save" class="btn btn-secondary">Guardar</button>
-            </div>
-          </div>
     </div>
 
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-bottom ">
 <!-- FIXME Agregar imagen de la marca -->
       <a class="navbar-brand" href="#">JWT</a>
       <div class="mx-auto">JSON Web Token generator!</div>
-      <div></div>JWT inc - 2020</nav>
+      <div></div>
+      JWT inc - 2020
+    </nav>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
