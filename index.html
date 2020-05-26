@@ -8,14 +8,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <title>JSON Web Token generator</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 <!-- FIXME Agregar imagen de la marca -->
-      <a class="navbar-brand" href="#">JWT</a>
+      <img src="img/logo.png" class="navbar-brand " href="#"></img>
       <div class="mx-auto">JSON Web Token generator!</div>
       <div class="btn-group mr-2" role="group" aria-label="Second group">
 <!-- FIXME Agregar imagenes de sol y luna -->
@@ -45,43 +45,28 @@
         <div class="col-3">
           <div id="historial" class="col-8 mt-3">
             <div class="row bg-secondary rounded">
-              <p class="jwts mx-auto"></p>
-              <div>
-                <label >Ingrese la clave:</label>
-                <input id="key0" class="mx-auto clave" type="text" ></input>
-              </div>
+              <p class="jwts mt-3 mx-auto"></p>
+              <input id="key0" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
             <div class="row bg-secondary rounded mt-2">
-              <p class="jwts mx-auto"></p>
-              <div>
-                <label >Ingrese la clave:</label>
-                <input id="key1" class="mx-auto clave" type="text" ></input>
-              </div>
+              <p class="jwts mt-3 mx-auto"></p>
+              <input id="key1" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
             <div class="row bg-secondary rounded mt-2">
-              <p class="jwts mx-auto"></p>
-              <div>
-                <label >Ingrese la clave:</label>
-                <input id="key2" class="mx-auto clave" type="text" ></input>
-              </div>
+              <p class="jwts mt-3 mx-auto"></p>
+              <input id="key2" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
             <div class="row bg-secondary rounded mt-2">
-              <p class="jwts mx-auto"></p>
-              <div>
-                <label >Ingrese la clave:</label>
-                <input id="key3" class="mx-auto clave" type="text" ></input>
-              </div>
+              <p class="jwts mt-3 mx-auto"></p>
+              <input id="key3" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
             <div class="row bg-secondary rounded mt-2">
-              <p class="jwts mx-auto"></p>
-              <div>
-                <label >Ingrese la clave:</label>
-                <input id="key4" class="mx-auto clave" type="text" ></input>
-              </div>
+              <p class="jwts mt-3 mx-auto"></p>
+              <input id="key4" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
-          </div>
-          <div class="row col-8 mt-2 justify-content-center">
-            <button id="clear" class="btn btn-secondary">Limpiar</button>
+            <div class="row mt-2 justify-content-center">
+              <button id="clear" class="btn btn-secondary">Limpiar</button>
+            </div>
           </div>
         </div>
         <div class="col-3">
@@ -108,8 +93,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-bottom ">
-<!-- FIXME Agregar imagen de la marca -->
-      <a class="navbar-brand" href="#">JWT</a>
+      <img src="img/logo.png" class="navbar-brand " href=""></img>
       <div class="mx-auto">JSON Web Token generator!</div>
       <div></div>
       JWT inc - 2020
