@@ -1,9 +1,16 @@
-**Como desarrollo para este proyecto me propongo realizar una interfaz para generar json web tokens a partir de los datos ingresados por el usuario similar a la que se encuentra en www.jwt.io. En la interfaz se podrán ver los últimos JWT 5 creados, y al clickearlos se permitira intoducir la clave para desifrarlos.** 
-
-
 # Proyecto 1:  HTML - CSS - Javascript - DOM
 
 **Fecha de entrega:** 14 de Mayo de 2020 (inclusive).
+
+**Como desarrollo para este proyecto me propongo realizar una interfaz para generar json web tokens a partir de los datos ingresados por el usuario similar a la que se encuentra en www.jwt.io. En la interfaz se podrán ver los últimos JWT 5 creados, y al clickearlos se permitira intoducir la clave para desifrarlos.** 
+
+# Para el desarrollo se utilizaron las librerias:
+
+**JQuery**
+
+**Bootstrap**
+
+**Crypto-JS**
 
 ## **Introducción**
 
