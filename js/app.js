@@ -56,11 +56,13 @@ function checkDay() {
 function setDay( day ) {
     if( day === "day" ) {
         $("body").removeClass('night-mode');
+        $("textarea").removeClass('night-mode');
         $("#day").addClass('active');
         $("#night").removeClass('active');
         storage.removeItem( 'night' )
     } else {
         $("body").addClass('night-mode');
+        $("textarea").addClass('night-mode');
         $("#day").removeClass('active');
         $("#night").addClass('active');
         storage.setItem( 'night' , 'true' )

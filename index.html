@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link href="img/favicon.ico" rel="icon" type="image/x-icon" />
 
     <title>JSON Web Token generator</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
 <!-- FIXME Agregar imagen de la marca -->
       <img src="img/logo.png" class="navbar-brand " href="#"></img>
-      <div class="mx-auto">JSON Web Token generator!</div>
+      <div class="font-weight-bold text-white mx-auto">JSON Web Token generator!</div>
       <div class="btn-group mr-2" role="group" aria-label="Second group">
 <!-- FIXME Agregar imagenes de sol y luna -->
         <button id="day" type="button" class="btn btn-secondary">Day</button>
@@ -26,11 +27,25 @@
 
     <div class="container-fluid mt-5" style="margin-bottom:100px">
       <div class="row justify-content-center">
-          <div>
-          <button class="btn btn-secondary mb-3" id="help-p"> Como crear un JWT </button>
-          </div>
+        <div>
+          <button class="btn btn-secondary mb-3" id="help-p"> Que es y como crear un JWT </button>
+        </div>
       </div>
-      <div class="jumbotron ml-5 mr-5 mt-3 " id="help-text"> Ayuda para crear un jwtasdfaisdvaisdvpaiushdvapiushdviasdvdvasdvasdvasdvasdvasdvasdvasdvasvdasdvasvasdfvafvadfvafvafvavavdfvsdfvsdfvsdf </div>
+      <div class="jumbotron ml-5 mr-5 mt-3 " id="help-text"> 
+        <p class="font-weight-bold"> ¿Que es un JWT?</p>
+        <p> Un JWT es un estándar de transmicion de informacion. Dicha informacion no es secreta, ya que cualquier persona con acceso al JWT podrá leerla, pero si es autentica, para generarla se requiere una clave que no debe ser compartida.<br/>
+        Esta formado por tres segmentos separados por puntos.<br/>
+        El primer segmento corresponde a la codificacion en base 64 del encabezado, el cual es un JSON con variables que definen al JWT, estas deben incluir "typ":"JWT" para informar que se trata de un token y la variable "alg" la cual especifica con que algoritmo se firmara el JWT.<br/>
+        El segundo segmento es el Payload, esta es la informacion que el usuario quiere transmitir. Nuevamente se trata de un JSON, pero no requiere condiciones especiales.<br/>
+        El tercer segmento se compone de la firma del JWT. Esta firma se genera a partir de los segmentos 1 y 2 junto con la clave secreta.</p>
+        <p class="font-weight-bold"> Como generar un JWT</p>
+        <p> Se deberán completar los 3 campos disponibles, definir un identificador con el que el token sera guardado y clickear el botón "Guardar".<br/>
+        Se dispone del menu desplegable con los algoritmos disponibles, al seleccionar el deseado se completara el area disponible para el header.</p>
+        <p class="font-weight-bold"> Como recuperar un JWT creado</p>
+        <p> Al momento de crear un JWT aparecera en el lado izquierdo de la pantalla un boton con el identificador que haya elegido.<br/>
+        Deberá clickearlo, ingresar la clave y presionar la tecla enter, el token completara los campos de texto de la interfaz.</p>
+
+      </div>
       <div class="row justify-content-center">
           <div class="dropdown">
             <button class="btn mx-auto btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -44,23 +59,23 @@
       <div class="row mt-3">
         <div class="col-3">
           <div id="historial" class="col-8 mt-3">
-            <div class="row bg-secondary rounded">
+            <div class="row text-light bg-secondary rounded">
               <p class="jwts mt-3 mx-auto"></p>
               <input id="key0" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
-            <div class="row bg-secondary rounded mt-2">
+            <div class="row text-light bg-secondary rounded mt-2">
               <p class="jwts mt-3 mx-auto"></p>
               <input id="key1" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
-            <div class="row bg-secondary rounded mt-2">
+            <div class="row text-light bg-secondary rounded mt-2">
               <p class="jwts mt-3 mx-auto"></p>
               <input id="key2" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
-            <div class="row bg-secondary rounded mt-2">
+            <div class="row text-light bg-secondary rounded mt-2">
               <p class="jwts mt-3 mx-auto"></p>
               <input id="key3" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
-            <div class="row bg-secondary rounded mt-2">
+            <div class="row text-light bg-secondary rounded mt-2">
               <p class="jwts mt-3 mx-auto"></p>
               <input id="key4" type="text" class="clave m-3 form-control" placeholder="Clave">
             </div>
@@ -70,11 +85,11 @@
           </div>
         </div>
         <div class="col-3">
-          <p>Header</p>
+          <p class="my-2">Header</p>
           <textarea id="header-text" style="color:blue; width:100%"></textarea>
-          <p>Payload</p>
+          <p class="my-2">Payload</p>
           <textarea id="payload-text" style="color:tomato; width:100%"></textarea>
-          <p>Signature</p>
+          <p class="my-2">Clave</p>
           <textarea id="signature-text" style="color:green; width:100%"></textarea>
         </div>
         <div class="col-3">
