@@ -2,6 +2,16 @@
 
 **Fecha de entrega:** 14 de Mayo de 2020 (inclusive).
 
+**Como desarrollo para este proyecto me propongo realizar una interfaz para generar json web tokens a partir de los datos ingresados por el usuario similar a la que se encuentra en www.jwt.io. En la interfaz se podrán ver los últimos JWT 5 creados, y al clickearlos se permitira intoducir la clave para desifrarlos.** 
+
+# Para el desarrollo se utilizaron las librerias:
+
+**JQuery**
+
+**Bootstrap**
+
+**Crypto-JS**
+
 ## **Introducción**
 
 El proyecto consiste en la implementación de una aplicación web utilizando las tencnologías HTML, CSS y Javascript. Se permite la utilización de librerías Javascript Open Source, siempre y cuando se otorguen los créditos correspondientes a el o los autores, incluyendo links a las fuentes originales. También es posible la utilización de frameworks de CSS (como por ejemplo Bootstrap). **No** se permite el uso de frameworks JS (AngularJS, React, VueJS).

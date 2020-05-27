@@ -1,0 +1,21 @@
+body{
+  background-color:white;
+}
+textarea{
+  background-color:#BBB;
+  height: 10em;
+  padding: 1em;
+}
+textarea#JWT-text{
+  height: 30em;
+}
+.night-mode{
+  background-color:#BBB;
+  color:000;
+}
+textarea.night-mode{
+  background-color:white;
+}
+.navbar-brand{
+  max-height:2.5em;
+}
