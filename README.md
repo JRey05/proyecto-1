@@ -7,7 +7,9 @@
 # Para el desarrollo se utilizaron las librerias:
 
 **JQuery**
+
 **Bootstrap**
+
 **Crypto-JS**
 
 ## **Introducción**
